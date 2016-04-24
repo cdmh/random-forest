@@ -439,9 +439,9 @@ DecisionNode<FEATURE, LABEL>::learn(
     numbersOfLabels[0].reserve(10); // expensive!
     numbersOfLabels[1].reserve(10); // expensive!
     double optimalSumOfGiniCoefficients = std::numeric_limits<double>::infinity();
-    size_t optimalFeatureIndex;
-    size_t optimalThresholdIndex;
-    Feature optimalThreshold;
+    size_t optimalFeatureIndex = 0;
+    size_t optimalThresholdIndex = 0;
+    Feature optimalThreshold = Feature();
     for(size_t j = 0; j < numberOfFeaturesToBeAssessed; ++j) {
         const size_t fi = featureIndices[j];
 
